@@ -18,7 +18,7 @@
 
 We will test SQL Profiler feature from PEM Server, using pgbench for tracking slow queries and get tips on how to optimize the SQL request by analyzing the execution plan ang get advices on index creation.
 
-# EDB Repository Token
+## EDB Repository Token
 To install EPAS you need an access to EDB Repository.   
 It is free, you can go to https://www.enterprisedb.com/do
 how to do.  
