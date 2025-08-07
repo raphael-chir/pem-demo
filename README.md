@@ -18,6 +18,12 @@
 
 We will test SQL Profiler feature from PEM Server, using pgbench for tracking slow queries and get tips on how to optimize the SQL request by analyzing the execution plan ang get advices on index creation.
 
+# EDB Repository Token
+To install EPAS you need an access to EDB Repository.   
+It is free, you can go to https://www.enterprisedb.com/do
+how to do.  
+Create a file named .edbtoken and past your key into it  
+
 ## Start
 We use vagrant to set up 2 VMs, one including PEM and another including Postgres Advanced 17. You can explore the bash file to reproduce the installation in your favorite automation tool.
 
