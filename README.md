@@ -103,7 +103,7 @@ You can make your own workload by using -f or --file option
 
 pgbench -h <host> -p <port> -U <user> -d <database> -f <workload.sql> -c 5 -j 4 -T 45
 ```
-Here is the example of the workload workload-read-slow-request-02.sql which we will use in this demo
+Here is the example of the workload workload-read-slow-request.sql which we will use in this demo
 ```sql
 \set acc_number random(0, 10000)
 SELECT count(*), sum(abalance)
@@ -111,6 +111,16 @@ FROM pgbench_accounts
 WHERE account_number = :acc_number;
 ```
 
+### Create your dataset
+Initialize pgbench database
+```
+pgbench -h 192.168.56.90 -p 5444 -U dba -d postgres -i -s 10
+```
+Add a non indexed column and fill it
+```
+alter table pgbench_accounts add column account_number integer;
+update pgbench_accounts set account_number = aid;
+```
 ## PEM SQL Profiler trace
 Important, the database to test must have the extensions mentionned previously.
 
@@ -128,7 +138,7 @@ The behaviour is proactive, based on database statistics it recommand index on a
 
 ## Lauch the workload and track slow queries
 ```
-pgbench -h 192.168.56.14 -p 5444 -U dba -d postgres -f workload-read-slow-request-02.sql -c 5 -j 4 -T 45
+pgbench -h 192.168.56.90 -p 5444 -U dba -d postgres -f workload-read-slow-request.sql -c 5 -j 4 -T 45
 ```
 Take a look on your SQL Profiler trace :
 ![alt text](images/image-3.png)
