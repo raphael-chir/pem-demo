@@ -20,8 +20,7 @@ We will test SQL Profiler feature from PEM Server, using pgbench for tracking sl
 
 ## EDB Repository Token
 To install EPAS you need an access to EDB Repository.   
-It is free, you can go to https://www.enterprisedb.com/do
-how to do.  
+It is free, you can go to https://www.enterprisedb.com/docs/repos/ to read how to do.  
 Create a file named .edbtoken and past your key into it  
 
 ## Start
